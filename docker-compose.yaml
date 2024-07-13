@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  api:
+    build: ./api
+    container_name: api_c
+    ports:
+      - "5038:5038"
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+  notes:
+    build: ./notes
+    container_name: notes_c
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
